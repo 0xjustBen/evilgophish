@@ -55,8 +55,8 @@ bl_bool="${7}"
 
 # Get path to certificates
 function get_certs_path () {
-    print_info "sudo certbot certonly --apache -n --register-unsafely-without-email --agree-tos -d '*.${root_domain}' -d ${root_domain}"
-    sudo certbot certonly --apache -n --register-unsafely-without-email --agree-tos -d "*.${root_domain}" -d "${root_domain}"
+    print_info "sudo certbot certonly --apache -n --register-unsafely-without-email --agree-tos -d ${root_domain}"
+    sudo certbot certonly --apache -n --register-unsafely-without-email --agree-tos -d "${root_domain}"
     certs_path+="/etc/letsencrypt/live/${root_domain}/"
 }
 
